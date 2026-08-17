@@ -139,8 +139,20 @@ pretending:
 5. If the medic can't restore green, the failure escalates into the planner's
    next-wave findings, and the scribe won't tag an un-green wave.
 
-The Thunderdome pattern is adapted from Steve Yegge's *The Shape of Things to
-Come*.
+## Credit and economics
+
+The planner/worker swarm architecture is inspired primarily by Cursor's
+[agent swarm & model economics](https://cursor.com/blog/agent-swarm-model-economics)
+write-up. The Thunderdome pattern (megabatch integration when the merge queue
+backs up) is adapted from Steve Yegge's *The Shape of Things to Come*.
+
+In the campaigns this kit was extracted from, it broadly reproduced the shape
+of Cursor's swarm results at substantially lower cost — even valuing every
+token at raw API list prices — largely because the architecture is
+cache-dominated: long-lived planner/worker loops re-read enormous cached
+prefixes, so ~97% of token volume bills at cache-read rates, and the strict
+model tiering (large model plans, mid-size models implement) keeps output
+tokens on the cheapest tier that holds quality.
 
 ## Model tiering
 

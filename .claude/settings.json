@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Workflow(swarm-build)"
+    ]
+  },
+  "__notes": {
+    "why-named-workflow": "Workflow allow rules only match NAMED workflows (files in .claude/workflows/); scriptPath invocations always prompt. The rule is honored at --settings CLI scope, or project scope once the workspace is trusted.",
+    "validation-warning": "An INVALID value anywhere in this file causes Claude Code to silently skip the ENTIRE file in headless mode (hooks and permissions both). Launch interactively once to surface validation errors.",
+    "rename": "If you rename the workflow file, change the allow rule to match — a mismatch shows up as a permission prompt that stalls an unattended run."
+  }
+}

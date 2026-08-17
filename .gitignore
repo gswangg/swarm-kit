@@ -1,0 +1,9 @@
+# bin/ is source here. Many global gitignores exclude it (build-output habit);
+# this negation keeps the launcher and janitor tracked regardless.
+!bin/
+
+.env
+.swarm-runner.sh
+.swarm-complete
+runner-attempt-*.log
+.claude/settings.local.json
